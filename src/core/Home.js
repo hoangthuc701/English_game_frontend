@@ -95,10 +95,10 @@ class Home extends Component{
             <>
             <div>
                 {posts.map((post,id)=>(
-                    <div className="card mt-5">
-                        <h5 class="card-header">{post.postedBy.name}</h5>
-                        <div class="card-body">
-                            <h5 class="card-title">{post.body}</h5>
+                    <div className="card mt-5" key={id}>
+                        <h5 className="card-header">{post.postedBy.name}</h5>
+                        <div className="card-body">
+                            <h5 className="card-title">{post.body}</h5>
                             <p>Create at: {new Date(post.created).toDateString()} </p>
                         </div>
                             
@@ -111,7 +111,7 @@ class Home extends Component{
     render(){
         const {body,posts,error}  = this.state;
         return (
-            <div classNam="container">
+            <div className="container">
                 <h1> Connecting Words Game </h1>
                 <br/>
                 <p>The rules are very simple: you just need to get the last letter of the word that was posted as the first letter for your word.</p>

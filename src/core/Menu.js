@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React  from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {signout,isAuthenticate} from '../auth/index'
 const isActive = (history,path) =>{
@@ -43,11 +43,12 @@ const Menu = ({history}) =>(
                        
                 </li>       
                 <li className="nav-item">
-                    <a 
+                    
+                    <Link 
                     className="nav-link"  
                     style={(isActive(history,"/signout"),{cursor:"pointer", color:"#fff"})} 
                     onClick={()=>signout(()=>history.push("/"))}
-                    >Sign Out</a>
+                    >Sign Out</Link>
                 </li>    
                </React.Fragment>
            )}
