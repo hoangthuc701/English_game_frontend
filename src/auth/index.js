@@ -1,6 +1,6 @@
 export const signup = user =>{
     
-    return fetch(`http://localhost:8080/signup`,{
+    return fetch(`https://englishgamebackend.herokuapp.com/signup`,{
         method:"POST",
         headers:{
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const signup = user =>{
     .catch(err=> console.log(err));
 }
 export const signin = user=>{
-    return fetch(`http://localhost:8080/signin`,{
+    return fetch(`https://englishgamebackend.herokuapp.com/signin`,{
         method:"POST",
         headers:{
             Accepted: "application/json",
@@ -35,7 +35,7 @@ export const signout = (next)=>{
     if (typeof window !=='undefined'){
         localStorage.removeItem('jwt');
         next();
-        return fetch(`http://localhost:8080/signout`,{
+        return fetch(`https://englishgamebackend.herokuapp.com/signout`,{
             method:"GET"
         })
         .then(respone =>{

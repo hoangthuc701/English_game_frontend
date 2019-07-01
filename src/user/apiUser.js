@@ -1,5 +1,5 @@
 export const  read = (userId, token)=>{
-    return fetch(`http://localhost:8080/user/${userId}`,{
+    return fetch(`https://englishgamebackend.herokuapp.com/user/${userId}`,{
         method:"GET",
         headers:{
             Accepted: "application/json",
@@ -13,7 +13,7 @@ export const  read = (userId, token)=>{
     .catch(err=>console.log(err));
 }
 export const getlist = () =>{
-    return fetch('http://localhost:8080/users',{
+    return fetch('https://englishgamebackend.herokuapp.com/users',{
         method:"GET",
         headers:{
             Accepted: 'application/json',

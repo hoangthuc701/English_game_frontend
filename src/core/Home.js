@@ -13,7 +13,7 @@ class Home extends Component{
         }
     }
     getData = () =>{
-        return fetch('http://localhost:8080',{
+        return fetch('https://englishgamebackend.herokuapp.com/',{
             method:"GET",
             headers:{
                 Accept:"application/json",
@@ -41,7 +41,7 @@ class Home extends Component{
         })
     }
     componentDidMount(){
-       const socket = socketIOClient('http://localhost:8080');
+       const socket = socketIOClient('https://englishgamebackend.herokuapp.com/');
        socket.on('refresh',()=>{
             this.getUpdate();
        })
@@ -66,7 +66,7 @@ class Home extends Component{
         const userId = isAuthenticate().user._id;      
         const {body} = this.state; 
         const post = {body}
-        fetch(`http://localhost:8080/post/new/${userId}`,{
+        fetch(`https://englishgamebackend.herokuapp.com/post/new/${userId}`,{
             method:"POST",
             headers:{
                 Accepted: "application/json",
@@ -86,7 +86,7 @@ class Home extends Component{
             }
             else
             {
-                console.log("Create success.")
+                //console.log("Create success.")
             }
         })
     }
